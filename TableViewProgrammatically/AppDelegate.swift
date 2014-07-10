@@ -13,12 +13,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             
     var window: UIWindow?
 
+    //create your navigation controller  variable
+    var navigationController: UINavigationController?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         // Override point for customization after application launch.
         self.window!.backgroundColor = UIColor.whiteColor()
         self.window!.makeKeyAndVisible()
+        
+        //create your navigation controller and set it to the root view controller
+        var tableViewController: TableViewController? = TableViewController(nibName: nil, bundle: nil)
+        self.navigationController = UINavigationController(rootViewController: tableViewController)
+        self.window!.rootViewController = self.navigationController
+
         return true
     }
 
